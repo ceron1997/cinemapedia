@@ -1,0 +1,10 @@
+****Para agregar un compnente nuevo en una aplicacion como esta 
+1 agregar la entidad en  domain/entities
+2 agregar el datasource en  domain/datasources
+3 agregar el repository en domain/repositories
+4 se trabaja con modelos especificos para cada respuesta, en postman haces la peticion a la api y
+ el json que te responde lo conviertes a un modelo dart usando esta herramienta https://app.quicktype.io/
+ (entonces puedes usar la notacion de punto en lugar de la de llaves y evitar errores)
+
+5 crear el mapper que es la conversion del objeto del response al objeto de  domain/entities (que usa nuestra app)
+   -> aca bien podria recibirse el json directo del response pero fernando recomienda usar objetos para evitar errores

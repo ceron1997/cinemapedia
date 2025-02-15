@@ -1,0 +1,2 @@
+cada provider debe tener una resposabilidad 
+ya que nosotros debemos procurar tener providers pequenios faciles de mantener 

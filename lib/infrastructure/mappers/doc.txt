@@ -1,0 +1,2 @@
+el objetivo de los mappers es hacer la conversion de la respuesta al tipo de objeto que usamos en nuestra app 
+esto es una barrera protectora y es muy valiosa 

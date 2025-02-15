@@ -5,10 +5,43 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 final nowPlayingMoviesProvider =
     StateNotifierProvider<MoviesNotifier, List<Movie>>((ref) {
   final fetchMoreMovies = ref
-      .watch(movie_repository_provider)
+      .watch(movieRepositoryProvider)
       .getNowPlaying; // la referencia a la funcion
   return MoviesNotifier(fetchMoreMovies: fetchMoreMovies);
 });
+
+final popularMoviesProvider =
+    StateNotifierProvider<MoviesNotifier, List<Movie>>((ref) {
+  final fetchMoreMovies = ref
+      .watch(movieRepositoryProvider)
+      .getPopular; // la referencia a la funcion
+  return MoviesNotifier(fetchMoreMovies: fetchMoreMovies);
+});
+
+
+
+final topRatedMoviesProvider =
+    StateNotifierProvider<MoviesNotifier, List<Movie>>((ref) {
+  final fetchMoreMovies = ref
+      .watch(movieRepositoryProvider)
+      .getUpcoming; // la referencia a la funcion
+  return MoviesNotifier(fetchMoreMovies: fetchMoreMovies);
+});
+
+final upcomingMoviesProvider =
+    StateNotifierProvider<MoviesNotifier, List<Movie>>((ref) {
+  final fetchMoreMovies = ref
+      .watch(movieRepositoryProvider)
+      .gettopRated; // la referencia a la funcion
+  return MoviesNotifier(fetchMoreMovies: fetchMoreMovies);
+});
+
+
+
+
+
+
+
 
 typedef MovieCallback = Future<List<Movie>> Function({int page});
 

@@ -1,0 +1,6 @@
+en esta carpeta estan modelos especificos de movie db que es una api
+y cada modelo sirve para una consulta especifica debido a las diferentes tipos de respuesta que recibimos 
+
+
+Nota: esto puede parecer exagerado pero es para proteger la app de los cambios de la api 
+todo esto es para que sea compatible con nuestro objeto personalizado domain/entities

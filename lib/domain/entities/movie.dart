@@ -1,3 +1,8 @@
+// esta es mi entidad core que e ayuda a obtener data 
+// de esta manera si el backend cambia podria cambiar aca pero la idea 
+//es que despues de aca la app funcione con este modelo 
+
+
 class Movie {
   final bool adult;
   final String backdropPath;
