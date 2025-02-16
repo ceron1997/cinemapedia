@@ -13,6 +13,12 @@
 
 6 agregar el datasorce que ya es la implementacion en infraestructure/datasource/ (se hacen las peticiones http)
 
+7 agregar en infraestructure/repositories .. la implementacion del repositorio que usa el datasource en
+    domain/datasources ... que es una especie de interfaz que ayuda a tener el orden del codigo 
+8 agregar el provider y el provider-implementacion en lib\presentation\providers\actors\ 
+
+9 finalmente en lib\presentation\screens\ podrias crear un compnente usando esa data,
+ com un comsumerstate privado que use la data (listviewBuilder, etc)
 
 -------------------------
 Nota:

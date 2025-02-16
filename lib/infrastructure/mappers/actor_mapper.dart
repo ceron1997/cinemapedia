@@ -5,7 +5,7 @@ class ActorMapper {
   static Actor castToEntity(Cast cast) => Actor(
       id: cast.id,
       name: cast.name,
-      profilePaht: cast.profilePath != null
+      profilePath: cast.profilePath != null
           ? 'https://image.tmdb.org/t/p/w500${cast.profilePath}'
           : 'https://www.shutterstock.com/image-vector/user-profile-icon-vector-avatar-600nw-2247726673.jpg',
       character: cast.character);
