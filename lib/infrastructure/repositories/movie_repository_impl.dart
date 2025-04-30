@@ -38,6 +38,7 @@ class MovieRepositoryImpl extends MoviesRepository {
 
   @override
   Future<List<Movie>> searchMovies(String query) async {
+    if (query.isEmpty) return [];
     return datasource.searchMovies(query);
   }
 }
