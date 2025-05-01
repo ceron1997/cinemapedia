@@ -1,4 +1,4 @@
-import 'package:cinemapedia/domain/entities/movie.dart';
+
 import 'package:go_router/go_router.dart';
 //archivo de barril de las pantallas es usado aca
 import 'package:cinemapedia/presentation/screens/screens.dart';
