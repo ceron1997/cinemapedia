@@ -1,9 +1,14 @@
-// esta es mi entidad core que e ayuda a obtener data 
-// de esta manera si el backend cambia podria cambiar aca pero la idea 
-//es que despues de aca la app funcione con este modelo 
+// esta es mi entidad core que e ayuda a obtener data
+// de esta manera si el backend cambia podria cambiar aca pero la idea
+//es que despues de aca la app funcione con este modelo
+import 'package:isar/isar.dart';
 
+part 'movie.g.dart';
 
+@collection
 class Movie {
+  Id? isarId;
+
   final bool adult;
   final String backdropPath;
   final List<String> genreIds;
@@ -19,20 +24,19 @@ class Movie {
   final double voteAverage;
   final int voteCount;
 
-  Movie({
-    required this.adult,
-    required this.backdropPath,
-    required this.genreIds,
-    required this.id,
-    required this.originalLanguage,
-    required this.originalTitle,
-    required this.overview,
-    required this.popularity,
-    required this.posterPath,
-    required this.releaseDate,
-    required this.title,
-    required this.video,
-    required this.voteAverage,
-    required this.voteCount
-  });
+  Movie(
+      {required this.adult,
+      required this.backdropPath,
+      required this.genreIds,
+      required this.id,
+      required this.originalLanguage,
+      required this.originalTitle,
+      required this.overview,
+      required this.popularity,
+      required this.posterPath,
+      required this.releaseDate,
+      required this.title,
+      required this.video,
+      required this.voteAverage,
+      required this.voteCount});
 }

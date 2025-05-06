@@ -141,3 +141,10 @@ Configurar el tema y rutas
 Crear un archivo .env si vas a usar variables de entorno
 
 Agregar paquetes al pubspec.yaml (ej: flutter_riverpod, dio, etc.)
+
+
+
+
+----- 
+cambios en la entidad hay que ejecutar el comando .. 
+flutter pub run build_runner build
