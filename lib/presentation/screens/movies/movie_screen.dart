@@ -7,7 +7,6 @@ import 'package:cinemapedia/domain/entities/movie.dart';
 
 import 'package:cinemapedia/presentation/providers/providers.dart';
 
-
 class MovieScreen extends ConsumerStatefulWidget {
   static const name = 'movie-screen';
 
@@ -184,6 +183,12 @@ class _ActorsByMovie extends ConsumerWidget {
   }
 }
 
+final isfavoriteProvider =
+    FutureProvider.family.autoDispose((ref, int movieId) {
+  final localStorage = ref.watch(localStorageRepositoryProvider);
+  return localStorage.isMovieFavorite(movieId);
+});
+
 class _CustomSliverAppBar extends ConsumerWidget {
   final Movie movie;
 
@@ -192,14 +197,26 @@ class _CustomSliverAppBar extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final size = MediaQuery.of(context).size;
+    final isFavoriteFuture = ref.watch(isfavoriteProvider(movie.id));
 
     return SliverAppBar(
       actions: [
         IconButton(
-          onPressed: () {
-            ref.watch(localStorageRepositoryProvider).toggleFavorite(movie);
+          onPressed: () async {
+            // ref.watch(localStorageRepositoryProvider).toggleFavorite(movie);
+            await ref
+                .read(localStorageRepositoryProvider)
+                .toggleFavorite(movie);
+            ref.invalidate(isfavoriteProvider(movie.id));
           },
-          icon: const Icon(Icons.favorite_border),
+          icon: isFavoriteFuture.when(
+            loading: () => const CircularProgressIndicator(strokeWidth: 2),
+            data: (isFavorite) => isFavorite
+                ? const Icon(Icons.favorite_rounded, color: Colors.red)
+                : const Icon(Icons.favorite_border),
+            error: (error, stackTrace) => throw UnimplementedError(),
+          ),
+          // const Icon(Icons.favorite_border),
           // const Icon(Icons.favorite_rounded, color: Colors.red),
         ),
       ],
